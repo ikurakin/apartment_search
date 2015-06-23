@@ -10,6 +10,7 @@ import (
 
 type SlackMsg struct {
 	Channel   string `json:"channel"`
+	Username  string `json:"username"`
 	Text      string `json:"text"`
 	IconEmoji string `json:"icon_emoji"`
 }
@@ -17,6 +18,7 @@ type SlackMsg struct {
 func SendToSlack(m string) {
 	s := &SlackMsg{
 		Channel:   "#adv_msg",
+		Username:  "aprtm_adv_bot",
 		Text:      m,
 		IconEmoji: ":ghost:",
 	}
