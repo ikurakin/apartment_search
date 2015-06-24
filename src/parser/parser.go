@@ -21,7 +21,7 @@ var (
 
 type ApartmentAdvert struct {
 	sync.Mutex
-	MsgIds map[string]string
+	msgIds map[string]string
 	Urls   chan []string
 	Adv    chan string
 	AllAdv chan string
@@ -29,12 +29,16 @@ type ApartmentAdvert struct {
 
 func New() *ApartmentAdvert {
 	aa := &ApartmentAdvert{
-		MsgIds: make(map[string]string),
+		msgIds: make(map[string]string),
 		Urls:   make(chan []string),
 		Adv:    make(chan string),
 		AllAdv: make(chan string),
 	}
 	return aa
+}
+
+func (aa *ApartmentAdvert) GetMsgIds() map[string]string {
+	return aa.msgIds
 }
 
 func (aa *ApartmentAdvert) GetAdvertList() {
@@ -59,40 +63,39 @@ func (aa *ApartmentAdvert) GetAdvertList() {
 			return
 		}
 		link, _ := s.Find("h3 a").Attr("href")
-		if _, ok := aa.MsgIds[link]; ok {
+		if _, ok := aa.msgIds[link]; ok {
 			return
 		}
 		aa.Lock()
-		aa.MsgIds[link] = ""
+		aa.msgIds[link] = ""
 		aa.Unlock()
 		msgs = append(msgs, fmt.Sprintf("%s%s", URL_ROOT, link))
 	})
 	aa.Urls <- msgs
 }
 
-func (aa *ApartmentAdvert) GetAdvertData(u string) {
+func (aa *ApartmentAdvert) getAdvertData(u string) {
 	doc, err := goquery.NewDocument(u)
 	if err != nil {
 		log.Println(err)
 	}
-	doc.Find(".adPage").Each(func(i int, s *goquery.Selection) {
+	s := doc.Find(".adPage")
 
-		title := s.Find("h1").Text()
-		price := strings.TrimSpace(s.Find(".adPage__content__price").Find("dd").Text())
-		location := strings.TrimSpace(s.Find(".adPage__content__region").Text())
-		phone := strings.TrimSpace(s.Find(".adPage__content__phone").Text())
-		delim := "--------------------------------------------------"
-		result := strings.Join([]string{
-			fmt.Sprintf("Title: %s", title), fmt.Sprintf("Price: %s", price),
-			strings.Replace(location, "\n", "", -1), strings.Replace(phone, "\n", "", -1),
-			fmt.Sprintf("URL: <%s>", u), delim, "\n"}, "\n")
-		aa.Adv <- result
-	})
+	title := s.Find("h1").Text()
+	price := strings.TrimSpace(s.Find(".adPage__content__price").Find("dd").Text())
+	location := strings.TrimSpace(s.Find(".adPage__content__region").Text())
+	phone := strings.TrimSpace(s.Find(".adPage__content__phone").Text())
+	delim := "---------------------------------------------"
+	result := strings.Join([]string{
+		fmt.Sprintf("Title: %s", title), fmt.Sprintf("Price: %s", price),
+		strings.Replace(location, "\n", "", -1), strings.Replace(phone, "\n", "", -1),
+		fmt.Sprintf("URL: <%s>", u), delim, "\n"}, "\n")
+	aa.Adv <- result
 }
 
 func (aa *ApartmentAdvert) ProcessUrls(urls []string) {
 	for _, url := range urls {
-		go aa.GetAdvertData(url)
+		go aa.getAdvertData(url)
 	}
 	var result []string
 	for i := 0; i < len(urls); i++ {
