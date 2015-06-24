@@ -16,7 +16,7 @@ func main() {
 			sendmsg.ToSlack(r)
 		case u := <-p.Urls:
 			go p.ProcessUrls(u)
-		case <-time.After(3 * time.Minute):
+		case <-time.After(180 * time.Minute):
 			go p.GetAdvertList()
 		}
 
