@@ -81,15 +81,16 @@ func (aa *ApartmentAdvert) getAdvertData(u string) {
 	}
 	s := doc.Find(".adPage")
 
-	title := s.Find("h1").Text()
+	title := strings.TrimSpace(s.Find("h1").Text())
 	price := strings.TrimSpace(s.Find(".adPage__content__price").Find("dd").Text())
 	location := strings.TrimSpace(s.Find(".adPage__content__region").Text())
 	phone := strings.TrimSpace(s.Find(".adPage__content__phone").Text())
+	date := strings.TrimSpace(s.Find(".adPage__header__stats__date").Next().Text())
 	delim := "---------------------------------------------"
 	result := strings.Join([]string{
 		fmt.Sprintf("Title: %s", title), fmt.Sprintf("Price: %s", price),
 		strings.Replace(location, "\n", "", -1), strings.Replace(phone, "\n", "", -1),
-		fmt.Sprintf("URL: <%s>", u), delim, "\n"}, "\n")
+		fmt.Sprintf("Date: %s", date), fmt.Sprintf("URL: <%s>", u), delim, "\n"}, "\n")
 	aa.Adv <- result
 }
 
