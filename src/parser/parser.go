@@ -21,18 +21,20 @@ var (
 
 type ApartmentAdvert struct {
 	sync.Mutex
-	msgIds map[string]string
-	Urls   chan []string
-	Adv    chan string
-	AllAdv chan string
+	msgIds      map[string]string
+	Urls        chan []string
+	Adv         chan string
+	AllAdv      chan string
+	lastDayUnix int64
 }
 
 func New() *ApartmentAdvert {
 	aa := &ApartmentAdvert{
-		msgIds: make(map[string]string),
-		Urls:   make(chan []string),
-		Adv:    make(chan string),
-		AllAdv: make(chan string),
+		msgIds:      make(map[string]string),
+		Urls:        make(chan []string),
+		Adv:         make(chan string),
+		AllAdv:      make(chan string),
+		lastDayUnix: time.Now().Unix(),
 	}
 	return aa
 }
@@ -41,13 +43,37 @@ func (aa *ApartmentAdvert) GetMsgIds() map[string]string {
 	return aa.msgIds
 }
 
+func (aa *ApartmentAdvert) SetMsgId(k, v string) {
+	aa.Lock()
+	aa.msgIds[k] = v
+	aa.Unlock()
+}
+
+func (aa *ApartmentAdvert) ClearMsgIds() {
+	aa.msgIds = make(map[string]string)
+}
+
+func (aa *ApartmentAdvert) GetLastDayUnix() int64 {
+	return aa.lastDayUnix
+}
+
+func (aa *ApartmentAdvert) SetLastDayUnix(d int64) {
+	aa.lastDayUnix = d
+}
+
 func (aa *ApartmentAdvert) GetAdvertList() {
 	doc, err := goquery.NewDocument(URL_MSGS)
 	if err != nil {
 		log.Println(err)
 	}
+
 	now := time.Now()
 	day_after := time.Unix(now.Unix()-86400, 0)
+	if day_after.Unix() >= aa.GetLastDayUnix() {
+		aa.SetLastDayUnix(now.Unix())
+		aa.ClearMsgIds()
+	}
+
 	var msgs []string
 	doc.Find("tr").Each(func(i int, s *goquery.Selection) {
 
@@ -63,12 +89,10 @@ func (aa *ApartmentAdvert) GetAdvertList() {
 			return
 		}
 		link, _ := s.Find("h3 a").Attr("href")
-		if _, ok := aa.msgIds[link]; ok {
+		if _, ok := aa.GetMsgIds()[link]; ok {
 			return
 		}
-		aa.Lock()
-		aa.msgIds[link] = ""
-		aa.Unlock()
+		aa.SetMsgId(link, "")
 		msgs = append(msgs, fmt.Sprintf("%s%s", URL_ROOT, link))
 	})
 	aa.Urls <- msgs
