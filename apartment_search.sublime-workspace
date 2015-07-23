@@ -4,16 +4,88 @@
 		"selected_items":
 		[
 			[
+				"Get",
+				"GetMsgIds	map[string]string ƒ"
+			],
+			[
+				"l",
+				"Lock	 ƒ"
+			],
+			[
+				"da",
+				"day_after	time.Time ν"
+			],
+			[
+				"U",
+				"Unix	int64 ƒ"
+			],
+			[
+				"func",
+				"func (*ApartmentAdvert)	func (...) {...} ʂ"
+			],
+			[
+				"Tri",
+				"TrimSpace	string ƒ"
+			],
+			[
+				"fun",
+				"func (*ApartmentAdvert)	func (...) {...} ʂ"
+			],
+			[
+				"Re",
+				"Replace	string ƒ"
+			],
+			[
+				"lo",
+				"location	string ν"
+			],
+			[
+				"Tr",
+				"TrimSpace	string ƒ"
+			],
+			[
+				"in",
+				"InTimeSpan	bool ƒ"
+			],
+			[
+				"D",
+				"Date	time.Time ƒ"
+			],
+			[
+				"e",
+				"expected_date	time.Time ν"
+			],
+			[
+				"A",
+				"April	 Ɩ"
+			],
+			[
 				"s",
-				"StatusCode	int ν"
+				"String	string ƒ"
+			],
+			[
+				"S",
+				"String	string ƒ"
+			],
+			[
+				"No",
+				"Now	time.Time ƒ"
+			],
+			[
+				"fm",
+				"fmtDate	time.Time ƒ"
+			],
+			[
+				"d",
+				"d_split	[]string ν"
+			],
+			[
+				"go",
+				"goimports"
 			],
 			[
 				"test",
 				"testAPI	 ƒ"
-			],
-			[
-				"Re",
-				"Response	struct ʈ"
 			],
 			[
 				"B",
@@ -48,10 +120,6 @@
 				"testGetData	 ƒ"
 			],
 			[
-				"d",
-				"dbstr	 ν"
-			],
-			[
 				"o",
 				"ok	 ν"
 			],
@@ -74,10 +142,6 @@
 			[
 				"c",
 				"ch	chan *Carrier ν"
-			],
-			[
-				"func",
-				"func (*CarrierData)	func (...) {...} ʂ"
 			],
 			[
 				"Ex",
@@ -260,10 +324,6 @@
 				"answerMsg	 ν"
 			],
 			[
-				"S",
-				"Subrouter	*mux.Router ƒ"
-			],
-			[
 				"T",
 				"Tick	struct ʈ"
 			],
@@ -300,10 +360,6 @@
 				"CopyXYs	plotter.XYs, error ƒ"
 			],
 			[
-				"D",
-				"DataDrawArea	plot.DrawArea ƒ"
-			],
-			[
 				"J",
 				"JsonResult	struct ʈ"
 			],
@@ -334,10 +390,6 @@
 			[
 				"cs",
 				"csv_reader	*csv.Reader ν"
-			],
-			[
-				"fun",
-				"func main	func main {...} ʂ"
 			],
 			[
 				"str",
@@ -462,68 +514,24 @@
 			[
 				"err",
 				"err_str	string ν"
-			],
-			[
-				"sum",
-				"sum_plus	float64 ν"
-			],
-			[
-				"pl",
-				"plus	float64 ν"
-			],
-			[
-				"calc",
-				"calc_name	string ν"
-			],
-			[
-				"add",
-				"add_total_mngr_region	err error ƒ"
-			],
-			[
-				"mn",
-				"mngr_region	string ν"
-			],
-			[
-				"e",
-				"excl_carrier	string ν"
-			],
-			[
-				"ini",
-				"init_queries	*db_queries.Queries ƒ"
-			],
-			[
-				"lo",
-				"logger	*log.Logger ν"
-			],
-			[
-				"O",
-				"O_RDWR	 Ɩ"
-			],
-			[
-				"op",
-				"OpenFile	file *os.File, err error ƒ"
-			],
-			[
-				"u",
-				"update_str	string ν"
-			],
-			[
-				"fmt",
-				"fmt_cur_date	string ν"
-			],
-			[
-				"fo",
-				"forecast_plan_end	float64 ν"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/cmd/apartmentsearch.go",
+			"file": "src/cmd/apartment_search/main.go",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/parser/parser.go",
+			"settings":
+			{
+				"buffer_size": 3183,
 				"line_ending": "Unix"
 			}
 		}
@@ -552,9 +560,21 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "xml",
+		"last_filter": "h",
 		"selected_items":
 		[
+			[
+				"h",
+				"HTMLBeautify"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
 			[
 				"xml",
 				"Indent XML"
@@ -596,10 +616,6 @@
 				"Indent XML"
 			],
 			[
-				"in",
-				"Indent XML"
-			],
-			[
 				"Package Control: ",
 				"Package Control: Remove Package"
 			],
@@ -627,6 +643,9 @@
 		"height": 139.0,
 		"history":
 		[
+			"PATH",
+			"$PATH",
+			"echo $PATH",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
@@ -643,11 +662,31 @@
 	[
 		"/Users/ikurakin/Documents/apartment_search",
 		"/Users/ikurakin/Documents/apartment_search/src",
-		"/Users/ikurakin/Documents/apartment_search/src/cmd"
+		"/Users/ikurakin/Documents/apartment_search/src/dateutils",
+		"/Users/ikurakin/Documents/apartment_search/src/parser",
+		"/Users/ikurakin/Documents/apartment_search/src/sendmsg",
+		"/Users/ikurakin/Documents/apartment_search/vendor"
 	],
 	"file_history":
 	[
 		"/Users/ikurakin/Documents/apartment_search/apartment_search.sublime-project",
+		"/Users/ikurakin/Documents/apartment_search/src/parser/parser.go",
+		"/Users/ikurakin/Documents/apartment_search/src/parser/parser_test.go",
+		"/Users/ikurakin/Documents/apartment_search/src/sendmsg/sendmsg.go",
+		"/Users/ikurakin/Documents/apartment_search/src/sendmsg/sendmsg_test.go",
+		"/Users/ikurakin/Documents/apartment_search/bin/999_aprtm_search",
+		"/Users/ikurakin/Documents/apartment_search/bin/999_aprtm_main",
+		"/Users/ikurakin/Documents/apartment_search/src/emailadv/emailadv_test.go",
+		"/Users/ikurakin/Documents/apartment_search/src/emailadv/emailadv.go",
+		"/Users/ikurakin/Documents/apartment_search/src/dateutils/dateutils_test.go",
+		"/Users/ikurakin/Documents/apartment_search/src/dateutils/dateutils.go",
+		"/Users/ikurakin/Downloads/tzdata2015e/europe",
+		"/Users/ikurakin/Documents/apartment_search/vendor/manifest",
+		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/GoSublime.sublime-settings",
+		"/Users/ikurakin/.bash_profile",
+		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoSublime/GoSublime.sublime-settings",
+		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ikurakin/Documents/apartment_search/src/cmd/apartmentsearch.go",
 		"/Users/ikurakin/Downloads/temp/pl_regprice.csv",
 		"/Users/ikurakin/Downloads/temp/vprefix.csv",
 		"/Users/ikurakin/Downloads/temp/pl_pricelist.csv",
@@ -669,8 +708,6 @@
 		"/Users/ikurakin/Documents/ccs_work/1c_integration/src/main/main.go",
 		"/Users/ikurakin/Documents/ccs_work/1c_integration/src/objects1c_test/expense_funds_test.go",
 		"/Users/ikurakin/Documents/go_learning.sublime-project",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/GoSublime.sublime-settings",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoSublime/GoSublime.sublime-settings",
 		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
 		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoOracle/README.md",
 		"/Users/ikurakin/Documents/ccs_work/1c_integration/src/objects1c/expense_funds_test.go",
@@ -739,7 +776,6 @@
 		"/Users/ikurakin/Documents/ccs_work/aberrant/194678_test_result.xml",
 		"/Users/ikurakin/Documents/ccs_work/aberrant/IcoMoon--limited--master/Icons/PNG/img_pack.qrc",
 		"/Users/ikurakin/Downloads/LCR_Constant_01112014.csv",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/ikurakin/Documents/ccs_work/aberrant/oberator",
 		"/Users/ikurakin/Documents/ccs_work/aberrant/sonus_parsed",
 		"/Users/ikurakin/Documents/oberator_log",
@@ -760,25 +796,11 @@
 		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/carantine/capgsx01_201410063234.CDR",
 		"/Users/ikurakin/Downloads/LCR_Constant_07102014.csv",
 		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/capgsx01.20140903030000.100F774",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoSublime/README.md",
-		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/capgsx01.20140903023000.100F772",
-		"/Users/ikurakin/Documents/ccs_work/aberrant/capgsx01.20140827094502.100EEFD",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoGdb/Default.sublime-keymap",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoGdb/GoGdb.sublime-settings",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/gosort",
-		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/User/untitled",
-		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/capgsx01.20140910185942.1010357.PRC",
-		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/capgsx01.20140903031500.100F775",
-		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/capgsx01.20140903024501.100F773",
-		"/Users/ikurakin/Documents/ccs_work/cdr_processing/cdrs/capgsx01.20140903033000.100F776",
-		"/Users/ikurakin/Documents/swap_plan_minutes",
-		"/Users/ikurakin/Documents/ccs_work/aberrant/oberator_20140908",
-		"/Users/ikurakin/Documents/ViberDownloads/d41a19e5c402faf77c9b359294b5df8f2c7f277276907bc9c4b11429556d0977.jpg"
+		"/Users/ikurakin/Library/Application Support/Sublime Text 3/Packages/GoSublime/README.md"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -793,6 +815,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"ads-list-table-price feature-2",
 			"dbconn_map",
 			"errors",
 			"RECEIPT",
@@ -919,8 +942,7 @@
 			"get_supplier_calls",
 			"get_swap_settings",
 			"get20_80settings",
-			"GetIntersections",
-			"GetCorrectionsByMngr"
+			"GetIntersections"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -949,33 +971,62 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/cmd/apartmentsearch.go",
+					"file": "src/cmd/apartment_search/main.go",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								280,
+								311
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/parser/parser.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								621,
+								621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1029.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1059,7 +1110,7 @@
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/GoSublime/GoSublime.sublime-build",
 	"project": "apartment_search.sublime-project",
 	"replace":
 	{
